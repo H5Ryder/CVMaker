@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Nunito&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Poppins:wght@100;200;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+/*BORDER BOX AND BORDER*/
+*{
+  box-sizing: border-box;
+
+  /*BORDER SETTINGS*/
+  --border-th: 1px;
+
+  /*SPACING*/
+  --margin-l: 24px;
+  --margin-m: 20px;
+  --margin-s: 12px;
+}
+
+
+
+/*DEFAULT BUTTON SETTINGS*/
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/*INPUT RESET*/
+/* Reset styles for text, tel, and email inputs */
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  /* Reset margin and padding */
+  margin: 0;
+  padding: 0;
+  
+  /* Reset border */
+  border: none;
+  
+  /* Reset background and outline */
+  background: none;
+  outline: none;
+  
+  /* Reset font styles */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  
+  /* Reset other styles */
+  color: inherit;
+  appearance: none;
+}
+
+
+
+/*Font Sizes*/
+#root {
+  width: 100vw;
+  text-align: center;
+
+  /*Basic Text*/
+  --text-basic-size: 16px;
+  --text-basic-weight: 300;
+
+  /*Bold Text - Name, Job Titles etc */
+  --text-bold-size: 16px;
+  --text-bold-weight: 500;
+  --text-bold: bold;
+
+   /*Italic Text - Quick Summaries */
+   --text-bold-size: 16px;
+   --text-bold-weight: 300;
+   --text-italic: italic;
+
+   /*Small Buttons*/
+   --text-mini-size: 14px;
+   --text-mini-weight: 300;
+
+/*CV OUTPUT TEXT*/
+
+/*Normal Text in CV*/
+  --text-cv-basic-size: 14px;
+  --text-cv-basic-weight: 300;
+
+/*Boldened Text in CV*/
+--text-cv-bold-size: 14px;
+--text-cv-bold-weight: 500;
+
+
+
+
+
+}
+
+/*Colors*/
+:root {
+  /* main colors */
+  --color-primary: #000000;
+  --color-primary-light: #C0C0AB;
+  --color-primary-bg: #FFFFE3;
+
+  --color-accent: #E8E8CF;
+  --color-accent-light: color-mod(var(--color-accent) tint(15%));
+  --color-accent-dark: color-mod(var(--color-accent) shade(10%));
+  --color-accent-bg: color-mod(var(--color-accent) alpha(20%));
+
+  /* shades - generated using chroma.js - 12 steps */
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: white;
+
+  /* feedback */
+  --color-success: #88c459;
+  --color-error: #f5414f;
+  --color-warning: #ffd137;
+}
+
+/*ANIMATIONS*/
+@keyframes rotateDown {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
+/*WRAPPER*/
+.MakerWrapper {
+  display: flex;
+}
+
+
+/*FORM SIDE--------------------------------------------------------------------------------------------------*/
+
+.MakerForm {
+  flex: 1 1 0;
+  background-color: var(--color-primary-bg);
+  font-family: 'Roboto', sans-serif;
+  border-right: var(--border-th) solid var(--color-primary-light);
+  
+}
+
+/*HEADER*/
+.FormHeader h1 {
+  text-align: left;
+  margin-left: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.headerButtons {
+  display: flex;
+  border-top: var(--border-th) solid var(--color-primary-light);
+  border-bottom: var(--border-th) solid var(--color-primary-light);
+}
+
+.headerButtons Button {
+  flex: 1 1 0;
+  border-left: var(--border-th) solid var(--color-primary-light);
+  color: var(--color-primary-light);
+  padding-top: var(--margin-s);
+  padding-bottom: var(--margin-s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:4px;
+
+}
+
+.headerButtons button:hover {
+  /*border-bottom: var(--border-th) solid var(--color-primary); /* Border color on hover */
+  background-color: var(--color-primary);
+  color: var(--color-primary-bg);
+}
+
+.headerButIcon {
+  color: var(--color-primary-light);
+}
+
+
+.headerButtons button:hover .headerButIcon {
+  color: var(--color-primary-bg);
+}
+
+
+/*SHARED STYLES*/
+.FormSection,
+.FormEducation,
+.FormPersonal,
+.FormWork,
+.FormSkill {
+  border-bottom: var(--border-th) solid var(--color-primary-light);
+}
+
+.FormSection .title,
+.FormEducation .title,
+.FormPersonal .title,
+.FormWork .title,
+.FormSkill .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: var(--margin-l);
+  margin-top: var(--margin-l);
+  margin-right: var(--margin-l);
+}
+
+.right-side-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+}
+
+.right-side-buttons p {
+  font-size: var(--text-mini-size);
+  font-weight: var(--text-mini-weight);
+  color: var(--color-primary-light);
+  font-family: inherit;
+}
+
+.right-side-buttons p:hover {
+  color: var(--color-primary);
+
+}
+
+.arrowIcon {
+  color: var(--color-primary-light);
+}
+
+.arrowIcon:hover {
+  color: var(--color-primary);
+}
+
+.switchButton {
+  color: var(--color-primary-light);
+}
+
+.switchButton:hover {
+  color: var(--color-primary);
+}
+
+
+/*PERSONAL FORM*/
+.data-personal, .education-container, .work-container, .data-skill {
+  margin-top: var(--margin-l);
+  margin-left: var(--margin-l);
+  max-height: 1000px;
+  transition: max-height 1s ease-out;
+  overflow: hidden;
+
+}
+
+.data-personal.closed, .education-container.closed, .work-container.closed, .data-skill.closed {
+  max-height: 0px;
+  overflow: hidden;
+
+}
+
+.personal-downIcon, .education-downIcon, .work-downIcon, .skill-downIcon {
+  transform: rotate(0deg);
+  transition: transform 0.4s ease-in;
+  color: var(--color-primary-light);
+}
+
+.personal-downIcon.open, .education-downIcon.open, .work-downIcon.open, .skill-downIcon.open {
+  transform: rotate(180deg);
+  transition: transform 0.4s ease-in;
+}
+
+
+.data-personal .input-container,.education-container .input-container, .work-container .input-container, .data-skill .input-container {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: var(--border-th) solid var(--color-primary-light);
+  margin-right: var(--margin-l);
+  margin-bottom: var(--margin-m);
+  gap: 4px;
+  }
+
+  .data-personal .input-container input, .work-container .input-container input, .education-container .input-container input, .data-skill .input-container input {
+    flex: 1 1 0;
+  }
+
+  .input-container.portfolio {
+    margin-bottom: 24px;
+  
+  }
+
+  /*EDUCATION FORM*/
+
+
+  .entriesContainer {
+    max-height: 500px;
+    transition: max-height 1s ease-out;
+    overflow: hidden;
+
+  }
+  .entry {
+    display: flex;
+    padding: 8px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border: var(--border-th) solid var(--color-primary-light);
+    justify-content: space-between;
+
+  }
+
+  .entry:hover {
+   /*color: var(--color-primary-bg);*/
+  }
+
+  .dateContainer {
+    display: flex;
+  }
+ 
+  .education-container .rightHandButtons, .work-container .rightHandButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: right;
+    margin-right: var(--margin-l);
+    margin-bottom: var(--margin-l);
+  }
+
+  .education-container .rightHandButtons button, .work-container .rightHandButtons button  {
+    font-size: var(--text-mini-size);
+    font-weight: var(--text-mini-weight);
+    color: var(--color-primary-light);
+    font-family: inherit;
+  
+  }
+
+  .education-container .rightHandButtons button:hover {
+    color: var(--color-primary);
+  }
+
+
+  /*EDUCATION & EXPERIENCE*/
+
+  .entryInfo {
+    display: flex;
+    flex: 1 1 0;
+    gap: 12px;
+    align-items: center;
+    color: var(--color-primary-light);
+  }
+
+  .entryInfo p {
+    flex: 1 1 0;
+    text-align: left;
+  }
+
+
+  .entry .right-side-buttons {
+    display: flex;
+    justify-content: right;
+    gap: 16px;
+  
+  }
+
+  .addMore {
+    padding: 8px;
+    margin-bottom: var(--margin-l);
+    color: var(--color-primary-light);
+  }
+
+  .addMore:hover {
+    color: var(--color-primary);
+
+  }
+
+  .addMore-container {
+    display:flex;
+    justify-content: right;
+    margin-right: var(--margin-s);
+  }
+
+
+  /*EXPERIENCE*/
+
+  .input-container.child {
+    margin-left: var(--margin-m);
+  }
+  
+
+/*VIEW SIDE-------------------------------------------------------------------------------------------------*/
+.MakerView {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 2cm;
+  background: var(--white);
+  font: inherit;
+  font-family: 'Arial', sans-serif;
+
+}
+
+.MakerView .title,
+.MakerView .topRow,
+.MakerView .work-entry,
+.MakerView .info,
+.Personal,
+.Personal .name {
+  margin-bottom: 1em;
+}
+
+
+.MakerView h3 {
+  font-size: var(--text-cv-bold-size);
+  font-style: var(--text-cv-bold-weight);
+  font-family: inherit;
+}
+
+
+.MakerView p,
+.MakerView a,
+.MakerView li {
+  font-size: var(--text-cv-basic-size);
+  font-weight: var(--text-cv-basic-weight);
+  color: var(--black);
+  font-family: inherit;
+
+}
+
+
+/*PERSONAL VIEW*/
+.Personal {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+.personal-details {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+/*EDUCATION*/
+.MakerView .title{
+  text-align: left;
+}
+
+.MakerView .topRow {
+  display: flex;
+}
+
+.MakerView .topRow .company, .MakerView .topRow .school {
+  flex: 1 1 0;
+  text-align: left;
+
+}
+
+
+
+.MakerView .topRow .date {
+    text-align: right;
+    font-weight: normal; /* Set font weight to normal (not bold) */
+    text-decoration: underline; /* Add underline to the text */
+ }
+
+
+
+ .MakerView .info ul {
+  text-align: left;
+  padding-left: 2em;
+ }
+
+ .MakerView .Education {
+  margin-bottom: 1em;
+ }
+
+ /*EXPERIENCE*/
+
+ .MakerView .summary {
+  text-align: left;
+ }
+
+ .MakerView .topRow .company {
+  text-align: left;
+ }
+
+ .MakerView .Experience {
+  margin-bottom: 1em;
+ }
+
+ .MakerView .Skills ul {
+  text-align: left;
+  padding-left: 2em;
+ }
+
+
+
+
+
+
