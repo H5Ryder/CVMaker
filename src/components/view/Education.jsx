@@ -37,8 +37,12 @@ export const Education = ({ educationData }) => {
 
   return (
     <div className="Education">
-      <h3 className="title">EDUCATION</h3>
-      {educationData && educationData.length > 0 ? listOutData() : <p>No education data available</p>}
+      {educationData && educationData.length > 0 ? (
+        <>
+          <h3 className="title">EDUCATION</h3>
+          {listOutData()}
+        </>
+      ) : null}
     </div>
   );
 };
