@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 
 const personalTom = {
-    fullName: "Tom McArthur",
+    fullName: "Tom McArthur (This is an example)",
     email: "trmcarthur97@gmail.com",
     phoneNumber: "+44 7482056636",
     address: "London, United Kingdom",

@@ -59,7 +59,7 @@ export const FormHeader = ({ clearForm, loadForm }) => {
     <>
       <div className="FormHeader">
         <div className="title-row">
-          <h1>No BullShit Resume</h1>
+          <h1>VisualCV</h1>
           <div className="modeToggle">
             <input
               type="checkbox"
